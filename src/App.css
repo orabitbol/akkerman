@@ -1,42 +1,106 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* =========  Base  ========= */
+.app-root {
+  font-family: "Roboto", sans-serif;
+  direction: rtl;   
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* =========  HERO VIDEO  ========= */
+.hero-video-wrapper {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  position: relative;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* =========  HERO IMAGE  ========= */
+.hero-image-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 
-.card {
-  padding: 2em;
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.read-the-docs {
-  color: #888;
+/* =========  CAROUSEL  ========= */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 450px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* -- dot indicators (במקום חיצים) -- */
+.carousel-dots {
+  z-index: 1;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carousel-dot:hover {
+  transform: scale(1.15);
+}
+
+.carousel-dot.active {
+  background: #d32f2f;       /* primary-red highlight */
+  transform: scale(1.25);
+}
+
+/* =========  REGION TABS  ========= */
+.region-tabs {
+  margin-top: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.region-tabs .MuiTab-root {
+  min-width: 72px;
+  font-weight: 500;
+}
+
+.region-tabs .MuiTabs-indicator {
+  background-color: #d32f2f;
+}
+
+/* =========  LOCATIONS GRID  ========= */
+.locations-section {
+  padding: 32px 24px;
+}
+
+/* רק לוודא שהתמונות בכרטיסיות לא מתעוותות */
+.location-card img {
+  object-fit: cover;
+}
+.location-card .MuiCardContent-root {
+  text-align: right;     /* ⭐ שם המקום + כתובת מיושרים לימין */
 }
