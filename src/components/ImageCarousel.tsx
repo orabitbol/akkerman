@@ -7,10 +7,33 @@ import Icon1 from "../assets/carouselImage/1.png";
 import Icon2 from "../assets/carouselImage/2.png";
 import Icon3 from "../assets/carouselImage/3.png";
 const items = [
-  { src: Image1, text: "טקסט ראשון", icon: Icon1 },
-  { src: Image2, text: "טקסט שני", icon: Icon2 },
-  { src: Image3, text: "טקסט שלישי", icon: Icon3 },
+  {
+    src: Image2,
+    text: `כדי לשמר את תווי החיטה היחודיים של המותג,
+גם ב- GREY GOOSE® ALTIUS משתמשים בחיטת חורף רכה מחבל פיקרדי בצרפת
+המיוצרת עבור המותג באופן בלעדי.`,
+    icon: Icon1,
+    color: "#012d73",
+  },
+  {
+    src: Image3,
+    text: `GREY GOOSE® ALTIUS עובר תהליך סינון ייחודי בטמפרטורה של 24- מעלות צלזיוס.
+תהליך זה יוצר באופן טבעי קריסטלי קרח
+ומעניק לוודקה מרקם יוצא דופן וטעם חלק להפליא.`,
+    icon: Icon2,
+    color: "#012d73",
+  },
+  {
+    src: Image1,
+    text: `מי הנביעה הטהורים המשמשים ליצירת GREY GOOSE® ALTIUS
+מגיעים מהפסגות המושלגות של הרי האלפים הצרפתיים.
+המים עוברים מסע טבעי דרך שכבות סלעים קריסטליים,
+המעשירים אותם במינרלים ייחודיים.`,
+    icon: Icon3,
+    color: "white",
+  },
 ];
+
 export default function ImageCarousel() {
   const [centerIndex, setCenterIndex] = useState(0);
 
@@ -43,8 +66,10 @@ export default function ImageCarousel() {
               alt={`carousel-${i}`}
               className="carousel-img"
             />
-            <img src={item.icon} alt="icon" className="carousel-icon" />
-            <Box className="carousel-caption">{item.text}</Box>
+            <img  src={item.icon} alt="icon" className="carousel-icon" />
+            <Box className="carousel-caption" sx={{ color: item.color }}>
+              {item.text}
+            </Box>
           </Box>
         ))}
       </Box>
