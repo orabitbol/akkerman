@@ -1,7 +1,12 @@
 /* =========  Base  ========= */
+body {
+  margin: 0;
+  padding: 0;
+}
 .app-root {
   font-family: "Roboto", sans-serif;
-  direction: rtl;   
+  direction: rtl;
+  width: 100%;
 }
 
 /* =========  HERO VIDEO  ========= */
@@ -20,12 +25,73 @@
   object-position: center;
 }
 
-/* =========  HERO IMAGE  ========= */
 .hero-image-wrapper {
   width: 100%;
-  overflow: hidden;
+  height: 700px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 32px;
+  background: linear-gradient(to right, #ffffff 0%, #9adbe8 100%);
+  box-sizing: border-box;
+}
+.hero-content {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.hero-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #012e75;
+  justify-content: center;
+  display: flex;
+}
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #012e75;
+}
+.hero-logo-container {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  margin-bottom: 24px;
+}
+.hero-image-logo {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+.hero-ice-block {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #012e75;
+  align-items: right;
+  text-align: right;
 }
 
+.hero-footer {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  text-align: center;
+  bottom: 0;
+  color: #022f74;
+}
 .hero-image {
   width: 100%;
   height: auto;
@@ -73,7 +139,7 @@
 }
 
 .carousel-dot.active {
-  background: #d32f2f;       /* primary-red highlight */
+  background: #d32f2f; /* primary-red highlight */
   transform: scale(1.25);
 }
 
@@ -102,5 +168,5 @@
   object-fit: cover;
 }
 .location-card .MuiCardContent-root {
-  text-align: right;     /* ⭐ שם המקום + כתובת מיושרים לימין */
+  text-align: right; /* ⭐ שם המקום + כתובת מיושרים לימין */
 }
