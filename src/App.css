@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  
 }
 .app-root {
   font-family: "Roboto", sans-serif;
@@ -107,8 +108,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  background: linear-gradient(to right, #ffffff, #cce4f5);
   padding: 24px 0;
-  background: #e3f4fa;
+
 }
 .carousel-track {
   display: flex;
