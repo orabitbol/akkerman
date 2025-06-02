@@ -6,6 +6,7 @@ import Image3 from "../assets/carouselImage/process-04.jpg";
 import Icon1 from "../assets/carouselImage/1.png";
 import Icon2 from "../assets/carouselImage/2.png";
 import Icon3 from "../assets/carouselImage/3.png";
+import useMediaQuery from "@mui/material/useMediaQuery";
 const items = [
   {
     src: Image2,
@@ -37,13 +38,6 @@ const items = [
 export default function ImageCarousel() {
   const [centerIndex, setCenterIndex] = useState(0);
 
-  const getVisibleItems = () => {
-    const length = items.length;
-    const prev = (centerIndex - 1 + length) % length;
-    const next = (centerIndex + 1) % length;
-    return [items[prev], items[centerIndex], items[next]];
-  };
-
   const prevSlide = () => {
     setCenterIndex((prev) => (prev - 1 + items.length) % items.length);
   };
@@ -51,7 +45,17 @@ export default function ImageCarousel() {
   const nextSlide = () => {
     setCenterIndex((prev) => (prev + 1) % items.length);
   };
+  const isMobile = useMediaQuery("(max-width:600px)");
 
+  const getVisibleItems = () => {
+    if (isMobile) {
+      return [items[centerIndex]];
+    }
+    const length = items.length;
+    const prev = (centerIndex - 1 + length) % length;
+    const next = (centerIndex + 1) % length;
+    return [items[prev], items[centerIndex], items[next]];
+  };
   return (
     <Box className="custom-carousel-wrapper">
       <button className="carousel-nav prev" onClick={prevSlide}>
@@ -66,7 +70,7 @@ export default function ImageCarousel() {
               alt={`carousel-${i}`}
               className="carousel-img"
             />
-            <img  src={item.icon} alt="icon" className="carousel-icon" />
+            <img src={item.icon} alt="icon" className="carousel-icon" />
             <Box className="carousel-caption" sx={{ color: item.color }}>
               {item.text}
             </Box>
