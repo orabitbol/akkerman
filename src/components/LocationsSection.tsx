@@ -16,28 +16,32 @@ export default function LocationsSection({ selectedRegion, onRegionChange }) {
 
   return (
     <Box className="locations-section">
+      <Typography className="locations-title">EXPERIENCE LUXURY</Typography>
+      <Typography className="locations-subtitle">
+        GREY GOOSE® ALTIUS זמינה כעת באופן בלעדי בחנויות הנבחרות
+      </Typography>
+
       <Tabs
         value={selectedRegion}
         onChange={(e, val) => onRegionChange(val)}
         centered
         className="region-tabs"
-        textColor="secondary"
-        indicatorColor="secondary"
+        TabIndicatorProps={{ style: { backgroundColor: "#012e75" } }}
       >
         {regions.map((r) => (
-          <Tab key={r} label={r} value={r} />
+          <Tab key={r} label={r} value={r} className="region-tab" />
         ))}
       </Tabs>
 
       <Grid container spacing={3} className="locations-grid" mt={2}>
         {filtered.map((loc) => (
           <Grid className="wrapper-locations" key={loc.id} item xs={12} sm={6} md={4} lg={3}>
-            <Card className="location-card" sx={{ height: "100%" }}>
-              <CardContent>
-                <Typography variant="h6" gutterBottom>
+            <Card className="location-card">
+              <CardContent className="location-card-content">
+                <Typography variant="h6" className="location-name">
                   {loc.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" className="location-address">
                   {loc.address}
                 </Typography>
               </CardContent>
@@ -48,3 +52,4 @@ export default function LocationsSection({ selectedRegion, onRegionChange }) {
     </Box>
   );
 }
+
